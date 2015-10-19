@@ -5,12 +5,15 @@
   "description": "Dummy microservice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "test": "standard --verbose | snazzy; mocha test"
   },
   "author": "Giulio Roggero",
   "license": "Apache",
   "dependencies": {
     "debug": "^2.2.0",
     "seneca": "^0.6.4"
+  },
+  "devDependencies": {
+    "standard": "^3.0.0"
   }
 }
