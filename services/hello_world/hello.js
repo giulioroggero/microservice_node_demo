@@ -18,7 +18,7 @@ HelloService.prototype.init = function (cb){
       if (msg.name){
       	respond(null, {message: 'Hello ' +msg.name+'!'});
       }else{
-      	// FIXME, use error code convention
+      	// FIXME, use error code convention ...
       	respond(null, {message: "No Name"});
       }
     }
