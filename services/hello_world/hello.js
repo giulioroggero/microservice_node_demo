@@ -9,17 +9,17 @@ function HelloService(options){
   this.seneca = options.seneca;
 }
 
-HelloService.prototype.init = function(cb){
+HelloService.prototype.init = function (cb){
   var self = this;
   debug("Init service");
 
-  self.seneca.add({role: 'user', cmd: 'echo'}, function(args, cb) {
-    if (cb){
-      if (args.name){
-      	cb(null, {message:"Hello " + args.name + "!"});
+  self.seneca.add({role: 'user', cmd: 'hello'}, function (msg, respond) {
+    if (respond){
+      if (msg.name){
+      	respond(null, {message:msg});
       }else{
       	// FIXME, use error code convention
-      	cb(null, {message: "No Name"});
+      	respond(null, {message: "No Name"});
       }
     }
   });

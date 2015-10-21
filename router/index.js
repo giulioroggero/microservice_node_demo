@@ -1,19 +1,18 @@
-/* jshint node: true */
 "use strict";
 
 // Hello World - Microservice
 
-var seneca = require('seneca')();
 var debug = require('debug')('router');
 var Router = require('./router');
 var express = require('express');
 var app = express();
 
 var seneca = require( 'seneca' )()
-      .use( 'router' )
+      .use( Router, {} )
       .client( { type:'tcp', pin:'role:user' } )
-      .client( { port:3001, pin:'role:user,cmd:echo' } );
+      .client( { port:3001, pin:'role:user,cmd:hello' } );
 
+seneca.listen({host: "localhost", port: 2999});
       // the magic is that we can add more clients
 
 var app = require( 'express' )()
