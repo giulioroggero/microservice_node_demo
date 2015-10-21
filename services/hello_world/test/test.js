@@ -3,7 +3,7 @@
 process.env.SERVICE_HOST = 'localhost';
 process.env.SERVICE_PORT = 3001;
 
-var should 	= require('should')
+var should 	= require('should');
 var hw = require('../');
 
 describe('Say hello!', function() {

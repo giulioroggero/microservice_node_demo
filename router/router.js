@@ -2,13 +2,13 @@
 
 module.exports = function api( options ) {
 
-  var valid_ops = { name:'name'}
+  var valid_ops = { name:'name'};
 
   this.add( 'role:api,path:echo', function( msg, respond ) {
     this.act( 'role:user,cmd:echo', {
       name: msg.name
-    }, respond )
-  })
+    }, respond );
+  });
 
 
   this.add( 'init:api', function( msg, respond ) {
@@ -18,7 +18,7 @@ module.exports = function api( options ) {
       map: {
         echo: { GET:true, suffix:'/:name' }
       }
-    }}, respond )
-  })
+    }}, respond );
+  });
 
-}
+};

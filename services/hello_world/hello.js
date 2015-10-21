@@ -7,7 +7,7 @@ var debug = require('debug')('HelloService');
 
 function HelloService(options){
   this.seneca = options.seneca;
-};
+}
 
 HelloService.prototype.init = function(cb){
   var self = this;
