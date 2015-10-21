@@ -3,7 +3,7 @@
 // Echo - Microservice
 
 var seneca = require('seneca')();
-var debug = require('debug')('echo');
+var debug = require('debug')('EchoService');
 var EchoService = require('./echo');
 
 // FIXME, usare callback con init per attendere che il servizio abbia completato il setup
