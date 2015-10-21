@@ -1,0 +1,16 @@
+{
+  "name": "microservicedemo",
+  "version": "0.0.1",
+  "private": true,
+  "description": "microservice demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha services/hello_world/test"
+  },
+  "author": "Giulio Roggero",
+  "license": "Apache",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
