@@ -16,7 +16,7 @@ HelloService.prototype.init = function (cb){
   self.seneca.add({role: 'user', cmd: 'hello'}, function (msg, respond) {
     if (respond){
       if (msg.name){
-      	respond(null, {message:msg});
+      	respond(null, {message: 'Hello ' +msg.name+'!'});
       }else{
       	// FIXME, use error code convention
       	respond(null, {message: "No Name"});
