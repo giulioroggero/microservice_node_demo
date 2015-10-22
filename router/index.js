@@ -10,7 +10,7 @@ var app = express();
 var seneca = require( 'seneca' )()
       .use( Router, {seneca: seneca} )
       .client( { type:'tcp', pin:'role:user' } )
-      .client( { port:3001, pin:'role:user,cmd:hello' } );
+      .client( { port:3001, pin:'role:user,cmd:hello' } ); // hardcoding hello
 
 seneca.listen({host: 'localhost', port: 2999});
       // the magic is that we can add more clients
@@ -22,3 +22,6 @@ app.use( require('body-parser').json() )
 
 
 debug('Router listening on', 3000);
+
+// export seneca for mocha
+module.exports.seneca = seneca;
