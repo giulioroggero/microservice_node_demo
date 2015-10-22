@@ -1,9 +1,10 @@
+/*jshint expr: true*/
 'use strict';
 
 process.env.SERVICE_HOST = 'localhost';
 process.env.SERVICE_PORT = 3001;
 
-var should 	= require('should');
+require('should');
 var hw = require('../');
 
 describe('Say hello!', function() {
@@ -35,7 +36,7 @@ describe('Say hello!', function() {
 
   it('It should send errror No Name', function(done){
     hw.seneca.act({role: 'user', cmd: 'hello'}, function(err, res) {
-      var expected = { message: "No Name" };
+      var expected = { message: 'No Name' };
       res.should.eql(expected);
       done();
     });

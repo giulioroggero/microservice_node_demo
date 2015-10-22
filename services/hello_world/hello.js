@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Hello World - Microservice
 // 
@@ -11,7 +11,7 @@ function HelloService(options){
 
 HelloService.prototype.init = function (cb){
   var self = this;
-  debug("Init service");
+  debug('Init service');
 
   self.seneca.add({role: 'user', cmd: 'hello'}, function (msg, respond) {
     if (respond){
@@ -19,7 +19,7 @@ HelloService.prototype.init = function (cb){
       	respond(null, {message: 'Hello ' +msg.name+'!'});
       }else{
       	// FIXME, use error code convention ...
-      	respond(null, {message: "No Name"});
+      	respond(null, {message: 'No Name'});
       }
     }
   });

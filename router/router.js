@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
 var debug = require('debug')('Router');
 
 module.exports = function api( options ) {
 
-  var valid_ops = { name:'name'};
+  debug(options);
 
-this.add( {role:'api',path:'hello'}, function( msg, respond ) {
+  this.add( {role:'api',path:'hello'}, function( msg, respond ) {
    this.act( {role:'user',cmd:'hello', name: msg.name}, respond );
-});
+ });
 
   var self = this;
   self.add( {role:'microservice',cmd:'register'}, function( msg, respond ) {
@@ -33,9 +33,9 @@ this.add( {role:'api',path:'hello'}, function( msg, respond ) {
   });
 
   var map = {
-        hello: { GET:true, suffix:'/:name' },
-        echo : { GET:true, suffix:'/:message' }
-      };
+    hello: { GET:true, suffix:'/:name' },
+    echo : { GET:true, suffix:'/:message' }
+  };
 
   self.add( 'init:api', function( msg, respond ) {
     self.act('role:web',{use:{

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Hello World - Microservice
 // 
@@ -11,8 +11,9 @@ var HelloService = require('./hello');
 var h = new HelloService({seneca: seneca});
 
 h.init(function(err){
-  seneca.listen({host: "localhost", port: 3001});
-  console.log("Hello Microservice listening on ", "localhost", 3001);
+	debug(err);
+  seneca.listen({host: 'localhost', port: 3001});
+  console.log('Hello Microservice listening on ', 'localhost', 3001);
 });
 
 

@@ -1,9 +1,10 @@
+/*jshint expr: true*/
 'use strict';
 
 process.env.SERVICE_HOST = 'localhost';
 process.env.SERVICE_PORT = 3002;
 
-var should = require('should');
+require('should');
 var hw = require('../');
 
 describe('Echo everythins!', function () {

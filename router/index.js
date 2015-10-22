@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Hello World - Microservice
 
@@ -12,14 +12,13 @@ var seneca = require( 'seneca' )()
       .client( { type:'tcp', pin:'role:user' } )
       .client( { port:3001, pin:'role:user,cmd:hello' } );
 
-seneca.listen({host: "localhost", port: 2999});
+seneca.listen({host: 'localhost', port: 2999});
       // the magic is that we can add more clients
 
 
-var app = require( 'express' )()
-      .use( require('body-parser').json() )
+app.use( require('body-parser').json() )
       .use( seneca.export( 'web' ) )
       .listen(3000);
 
 
-console.log("Router listening on", 3000);
+debug('Router listening on', 3000);
