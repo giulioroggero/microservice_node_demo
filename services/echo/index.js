@@ -8,6 +8,7 @@ var EchoService = require('./echo');
 
 // FIXME, usare callback con init per attendere che il servizio abbia completato il setup
 var h = new EchoService({seneca: seneca});
+
 h.init(function (err) {
 	debug(err);
 	seneca.listen({host: 'localhost', port: 3002});

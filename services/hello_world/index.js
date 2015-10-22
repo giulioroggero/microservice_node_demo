@@ -19,4 +19,3 @@ h.init(function(err){
 
 // export seneca for mocha
 module.exports.seneca = seneca;
-

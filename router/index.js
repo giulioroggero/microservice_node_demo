@@ -7,6 +7,7 @@ var Router = require('./router');
 var express = require('express');
 var app = express();
 
+
 var seneca = require( 'seneca' )()
       .use( Router, {seneca: seneca} )
       .client( { type:'tcp', pin:'role:user' } )
@@ -25,3 +26,4 @@ debug('Router listening on', 3000);
 
 // export seneca for mocha
 module.exports.seneca = seneca;
+

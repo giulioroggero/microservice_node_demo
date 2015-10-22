@@ -5,7 +5,7 @@
   "description": "microservice demo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha services/hello_world/test"
+    "test": "mocha services/hello_world/test;mocha services/echo/test;mocha router/test"
   },
   "author": "Giulio Roggero",
   "license": "Apache",

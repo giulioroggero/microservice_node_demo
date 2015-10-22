@@ -5,8 +5,12 @@ To test
 npm install
 mocha test
 
-curl test
-curl -X GET http://localhost:3000/api/echo/name?name=giulio --header "Content-Type:application/json" 
+--curl test
+curl -X GET http://localhost:3000/api/echo/giulio --header "Content-Type:application/json" 
+
+result
+
+{"message":"giulio giulio"}
 
 see http://senecajs.org/get-started/
 

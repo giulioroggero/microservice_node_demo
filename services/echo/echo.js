@@ -14,19 +14,17 @@ EchoService.prototype.init = function (cb) {
   debug('Init EchoService service');
 
   self.seneca.add({role: 'user', cmd: 'echo'}, function (msg, respond) {
-    console.log('Echoing: ',msg);
+    debug('Echoing: ',msg.message);
     if (respond) {
       if (msg.message) {
-        respond(null, {message: msg.message});
+        respond(null, {message: msg.message + ' ' + msg.message});
       } else {
         // FIXME, use error code convention
         respond(null, {message: 'No Name'});
       }
     }
   });
-
   self.registerService(cb);
-
 };
 
 EchoService.prototype.registerService = function (cb) {

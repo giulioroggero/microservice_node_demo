@@ -8,9 +8,10 @@ require('should');
 var hw = require('../');
 
 describe('Echo everythins!', function () {
-  it('It should reply Giulio Giulio!', function (done) {
-    hw.seneca.act({role: 'user', cmd: 'hello', name: 'Giulio'}, function (err, res) {
-      var expected = { message: 'Giulio Giulio!' };
+	
+  it('It should reply Giulio Giulio', function (done) {
+    hw.seneca.act({role: 'user', cmd: 'echo', message: 'Giulio'}, function (err, res) {
+      var expected = { message: 'Giulio Giulio' };
       res.should.eql(expected);
       done();
     });
