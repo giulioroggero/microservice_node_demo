@@ -22,3 +22,19 @@ it should reply
 
 {"message":"Hello giulio!"}
 
+-- Three services test --
+
+* cd router
+* npm install
+* npm start
+
+* cd services/echo@0.0.1
+* npm install
+* npm start
+
+* cd services/send_msg
+* npm install
+* npm start
+
+Send a message, should respond with the same message twice.
+add DEBUG=* tu see the message exchange

@@ -18,6 +18,7 @@ EchoService.prototype.init = function (cb) {
     if (respond) {
       if (msg.message) {
         respond(null, {message: msg.message + ' ' + msg.message});
+        debug('Echoed: ',msg.message);
       } else {
         // FIXME, use error code convention
         respond(null, {message: 'No Name'});

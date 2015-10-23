@@ -1,0 +1,20 @@
+{
+  "name": "send_msg",
+  "version": "0.0.1",
+  "private": true,
+  "description": "send message microservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --verbose | snazzy; mocha test"
+  },
+  "author": "Giulio Roggero",
+  "license": "Apache",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "prompt": "^0.2.14",
+    "seneca": "^0.6.4"
+  },
+  "devDependencies": {
+    "standard": "^3.0.0"
+  }
+}

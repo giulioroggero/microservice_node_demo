@@ -1,11 +1,11 @@
 'use strict';
 
 var debug = require('debug')('Router');
-var r = require('.');
+var r = require('./');
 
 module.exports = function api( options ) {
 
-  debug("options", options);
+  debug('options', options);
   var self = this;
   
   // dynamic router add
@@ -16,16 +16,16 @@ module.exports = function api( options ) {
     // add client to seneca
     r.seneca.client( { port:msg.message.clientPort, pin:{role:msg.message.role, cmd: msg.message.cmd} } );
     
-    self.add( {role:'api',path:msg.message.cmd}, function( apimsg, apirespond ) {
+    r.seneca.add( {role:'api',path:msg.message.cmd}, function( apimsg, apirespond ) {
       debug('New message', apimsg.message);
-      self.act( {role: msg.message.role, cmd: msg.message.cmd, message: apimsg.message}, apirespond );
+      r.seneca.act( {role: msg.message.role, cmd: msg.message.cmd, message: apimsg.message}, apirespond );
     });
 
     // prepare the map
     map[msg.message.cmd] = {};
-    map[msg.message.cmd]['GET'] = true;
-    map[msg.message.cmd]['suffix'] = '/:message';
-    debug('map', map)
+    map[msg.message.cmd].GET = true;
+    map[msg.message.cmd].suffix = '/:message';
+    debug('map', map);
 
     // init the new map
     self.act('role:web',{use:{
@@ -50,7 +50,7 @@ module.exports = function api( options ) {
     hello: { GET:true, suffix:'/:name' }
   };
 
-  debug('map', map)
+  debug('map', map);
 
   self.add( 'init:api', function( msg, respond ) {
     self.act('role:web',{use:{
