@@ -38,3 +38,9 @@ it should reply
 
 Send a message, should respond with the same message twice.
 add DEBUG=* tu see the message exchange
+
+# Committing
+
+Use this pre-commit hook
+
+ln -s ../../scripts/precommit.sh .git/hooks/pre-commit
