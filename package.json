@@ -6,10 +6,11 @@
   "main": "index.js",
   "scripts": {
     "pretest": "jshint --reporter=node_modules/jshint-stylish .",
-    "test": "mocha services/hello_world@0.0.1/test; mocha services/echo@0.0.1/test;mocha router@0.0.1/test",
+    "test": "mocha services/hello_world@0.0.1/test services/echo@0.0.1/test router@0.0.1/test",
     "start": "pm2 start router@0.0.1/index.js; pm2 start services/hello_world@0.0.1/index.js; pm2 start services/echo@0.0.1/index.js",
     "stop": "pm2 stop router@0.0.1/index.js; pm2 stop services/hello_world@0.0.1/index.js; pm2 stop services/echo@0.0.1/index.js",
-    "curl": "curl -X GET http://localhost:3000/api/echo/giulio --header 'Content-Type:application/json'"
+    "curl": "curl -X GET http://localhost:3000/api/echo/giulio --header 'Content-Type:application/json'",
+    "coverage": "istanbul cover _mocha services/hello_world@0.0.1/test services/echo@0.0.1/test router@0.0.1/test -- -R spec"
   },
   "authors": [
     "Giulio Roggero",
@@ -22,6 +23,7 @@
     "./router": "0.0.1"
   },
   "devDependencies": {
+    "istanbul": "^0.4.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
     "pm2": "^0.15.7"
