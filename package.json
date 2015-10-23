@@ -5,13 +5,21 @@
   "description": "microservice demo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha services/hello_world/test;mocha services/echo/test;mocha router/test"
+    "test": "mocha services/hello_world@0.0.1/test;mocha services/echo@0.0.1/test;mocha router@0.0.1/test",
+    "start": "pm2 start router@0.0.1/index.js; pm2 start services/hello_world@0.0.1/index.js; pm2 start services/echo@0.0.1/index.js",
+    "stop": "pm2 stop router@0.0.1/index.js; pm2 stop services/hello_world@0.0.1/index.js; pm2 stop services/echo@0.0.1/index.js",
+    "curl": "curl -X GET http://localhost:3000/api/echo/giulio --header 'Content-Type:application/json'"
   },
-  "author": "Giulio Roggero",
-  "license": "Apache",
-  "dependencies": {},
+  "authors": ["Giulio Roggero", "Alex Mufatti"],
+  "license": "Apache 2.0",
+  "dependencies": {
+    "services/hello_world":"0.0.1",
+    "services/echo":"0.0.1",
+    "./router":"0.0.1"
+    },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "pm2": "^0.15.7",
     "grunt-contrib-jshint": "^0.11.3"
   }
 }
