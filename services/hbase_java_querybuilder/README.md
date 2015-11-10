@@ -7,3 +7,6 @@ mvn clean package
 
 and run with
 java -jar target/querybuilder-1.0-SNAPSHOT.jar
+
+or use
+start.sh
