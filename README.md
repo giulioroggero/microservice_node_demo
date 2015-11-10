@@ -1,14 +1,14 @@
-# Welcome! #
+# Welcome! 
 This is a Microservice with a Router on port 3000 and a Microservice on Port 3001
 We use seneca for patter matching and express for API Rest frontend
 
--- 5 sec magic --
+##5 sec magic
 * npm install
 * npm start
 * npm curl
 
 
--- To run this test manually --
+##To run this test manually
 
 * cd services/hello_world
 * npm install
@@ -38,3 +38,12 @@ it should reply
 
 Send a message, should respond with the same message twice.
 add DEBUG=* tu see the message exchange
+
+##Coverage
+npm run coverage
+open coverage/lcov-report/index.html
+##Committing
+
+Use this pre-commit hook
+
+ln -s ../../scripts/precommit.sh .git/hooks/pre-commit
