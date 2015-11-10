@@ -18,8 +18,8 @@
   ],
   "license": "Apache 2.0",
   "dependencies": {
-    "services/hello_world": "0.0.1",
-    "services/echo": "0.0.1",
+    "./services/hello_world": "0.0.1",
+    "./services/echo": "0.0.1",
     "./router": "0.0.1"
   },
   "devDependencies": {
