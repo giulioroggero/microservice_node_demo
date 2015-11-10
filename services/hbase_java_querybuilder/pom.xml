@@ -1,49 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.sirti.microservice.hbase.querybuilder</groupId>
-  <artifactId>querybuilder</artifactId>
-  <version>1.0-SNAPSHOT</version>
-
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.7.RELEASE</version>
-    </parent>
-
-    <dependencies>
-        <dependency>
+    <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.sirti.microservice.hbase.querybuilder</groupId>
+        <artifactId>querybuilder</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <parent>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
-
-    <build>
-        <plugins>
-            <plugin>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>1.2.7.RELEASE</version>
+        </parent>
+        <dependencies>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-    <repositories>
-        <repository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </pluginRepository>
-    </pluginRepositories>
-</project>
+                <artifactId>spring-boot-starter-web</artifactId>
+            </dependency>
+            <!-- Phoenix Driver -->
+            <dependency>
+                <groupId>org.apache.phoenix</groupId>
+                <artifactId>phoenix-client</artifactId>
+                <version>${org.apache.phoenix-version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${org.springframework-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>0.9.5</version>
+                <type>jar</type>
+            </dependency>
+        </dependencies>
+        <properties>
+            <java.version>1.8</java.version>
+            <org.apache.phoenix-version>4.3.1</org.apache.phoenix-version>
+            <org.springframework-version>4.1.5.RELEASE</org.springframework-version>
+            <org.springframework.security-version>4.0.0.RELEASE</org.springframework.security-version>
+            <org.aspectj-version>1.8.4</org.aspectj-version>
+            <org.slf4j-version>1.7.10</org.slf4j-version>
+            <log4j-version>1.2.17</log4j-version>
+            <com.fasterxml.jackson.core-version>2.4.4</com.fasterxml.jackson.core-version>
+            <antlr4.runtime-version>4.5</antlr4.runtime-version>
+            <joda-time-version>2.7</joda-time-version>
+            <javax.servlet.jsp-version>2.3.1</javax.servlet.jsp-version>
+            <javax.servlet.jsp.jstl-version>1.2</javax.servlet.jsp.jstl-version>
+            <org.glassfish.web-version>1.2</org.glassfish.web-version>
+            <org.apache.maven.plugins-version>3.2</org.apache.maven.plugins-version>
+            <antlr4.maven.plugin-version>4.5.1</antlr4.maven.plugin-version>
+            <maven.dependency.plugin-version>2.10</maven.dependency.plugin-version>
+            <maven.jar.plugin-version>2.5</maven.jar.plugin-version>
+            <org.apache.tomcat-version>8.0.15</org.apache.tomcat-version>
+            <com.mchange-version>0.9.5</com.mchange-version>
+            <org.eclipse.jetty-version>9.2.2.v20140723</org.eclipse.jetty-version>
+        </properties>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </build>
+        <repositories>
+            <repository>
+                <id>spring-releases</id>
+                <url>https://repo.spring.io/libs-release</url>
+            </repository>
+        </repositories>
+        <pluginRepositories>
+            <pluginRepository>
+                <id>spring-releases</id>
+                <url>https://repo.spring.io/libs-release</url>
+            </pluginRepository>
+        </pluginRepositories>
+    </project>
