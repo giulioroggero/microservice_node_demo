@@ -51,7 +51,7 @@ public class HKpiDaoImpl
                  + hKpiTable
     ;
     List<HKpi> alarms = this.jdbcTemplate.query(sql,
-                                                new BeanPropertyRowMapper(HKpi.class));
+                                                new BeanPropertyRowMapper<HKpi>(HKpi.class));
     return alarms;
   }
   @Override
@@ -65,7 +65,7 @@ public class HKpiDaoImpl
                  + " WHERE "
                  + filter;
     List<HKpi> alarms = this.jdbcTemplate.query(sql,
-                                                new BeanPropertyRowMapper(HKpi.class));
+                                                new BeanPropertyRowMapper<HKpi>(HKpi.class));
     return alarms;
   }
 }

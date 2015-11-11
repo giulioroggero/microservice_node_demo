@@ -6,7 +6,6 @@
 package com.sirti.microservice.hbase.model;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
