@@ -27,8 +27,8 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 app.use( require('body-parser').json() )
-      .use( seneca.export( 'web' ) )
       .use(allowCrossDomain)
+      .use( seneca.export( 'web' ) )
       .listen(3000);
 
 
