@@ -26,11 +26,16 @@
                 <artifactId>spring-jdbc</artifactId>
                 <version>${org.springframework-version}</version>
             </dependency>
-<dependency>
-    <groupId>org.jasig.mojo.jspc</groupId>
-    <artifactId>jspc-maven-plugin</artifactId>
-    <version>2.0.0</version>
-</dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>1.2.3.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jasig.mojo.jspc</groupId>
+                <artifactId>jspc-maven-plugin</artifactId>
+                <version>2.0.0</version>
+            </dependency>
             <dependency>
                 <groupId>com.mchange</groupId>
                 <artifactId>c3p0</artifactId>
@@ -42,23 +47,9 @@
             <java.version>1.7</java.version>
             <org.apache.phoenix-version>4.3.1</org.apache.phoenix-version>
             <org.springframework-version>4.1.5.RELEASE</org.springframework-version>
-            <org.springframework.security-version>4.0.0.RELEASE</org.springframework.security-version>
-            <org.aspectj-version>1.8.4</org.aspectj-version>
             <org.slf4j-version>1.7.10</org.slf4j-version>
             <log4j-version>1.2.17</log4j-version>
-            <com.fasterxml.jackson.core-version>2.4.4</com.fasterxml.jackson.core-version>
             <antlr4.runtime-version>4.5</antlr4.runtime-version>
-            <joda-time-version>2.7</joda-time-version>
-            <javax.servlet.jsp-version>2.3.1</javax.servlet.jsp-version>
-            <javax.servlet.jsp.jstl-version>1.2</javax.servlet.jsp.jstl-version>
-            <org.glassfish.web-version>1.2</org.glassfish.web-version>
-            <org.apache.maven.plugins-version>3.2</org.apache.maven.plugins-version>
-            <antlr4.maven.plugin-version>4.5.1</antlr4.maven.plugin-version>
-            <maven.dependency.plugin-version>2.10</maven.dependency.plugin-version>
-            <maven.jar.plugin-version>2.5</maven.jar.plugin-version>
-            <org.apache.tomcat-version>8.0.15</org.apache.tomcat-version>
-            <com.mchange-version>0.9.5</com.mchange-version>
-            <org.eclipse.jetty-version>9.2.2.v20140723</org.eclipse.jetty-version>
         </properties>
         <build>
             <plugins>

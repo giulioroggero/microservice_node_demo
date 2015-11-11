@@ -17,8 +17,18 @@ seneca.listen({host: 'localhost', port: 2999});
       // the magic is that we can add more clients
 
 
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+    next();
+};
+
 app.use( require('body-parser').json() )
       .use( seneca.export( 'web' ) )
+      .use(allowCrossDomain)
       .listen(3000);
 
 
