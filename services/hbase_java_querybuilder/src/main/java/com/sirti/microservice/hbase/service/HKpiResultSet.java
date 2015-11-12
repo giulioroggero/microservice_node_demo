@@ -50,6 +50,9 @@ public class HKpiResultSet extends SenecaMessageContentBase {
   public List<HColumn> getColumns(){
     List<HColumn> cols = new ArrayList<HColumn>();
     cols.add(new HColumn("Regione","regione"));
+    cols.add(new HColumn("Severity","severity"));
+    cols.add(new HColumn("Dominio","dominio"));
+    cols.add(new HColumn("Slogan","slogan"));
     return cols;
   }
 

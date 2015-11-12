@@ -51,7 +51,7 @@ public class UnicoStoricoDaoImpl
   @Override
   public List<UnicoStorico> findAll() {
     String sql = "SELECT * FROM "
-                 + hKpiTable
+                 + hKpiTable + " LIMIT 500"
     ;
     List<UnicoStorico> alarms = this.jdbcTemplate.query(sql,
                                                 new BeanPropertyRowMapper<UnicoStorico>(UnicoStorico.class));
