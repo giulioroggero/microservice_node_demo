@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import com.sirti.microservice.hbase.model.SenecaRegister;
+import com.sirti.microservice.hbase.model.SenecaMessage;
+import com.sirti.microservice.hbase.model.SenecaMessageRegister;
 
 @Component
 public class RouterRegister implements ApplicationListener<ContextRefreshedEvent> {
@@ -20,7 +21,8 @@ public class RouterRegister implements ApplicationListener<ContextRefreshedEvent
 	public void onApplicationEvent(ContextRefreshedEvent arg0) {
 		RestTemplate restTemplate = new RestTemplate();
 		
-		SenecaRegister request = new SenecaRegister();
+		SenecaMessage<SenecaMessageRegister> request = new SenecaMessage<SenecaMessageRegister>();
+		request.message = new SenecaMessageRegister();
 		request.message.clientPort = "9999";
 		request.message.cmd = "kpilist";
 		request.message.role = "user";

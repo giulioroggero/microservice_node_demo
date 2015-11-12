@@ -43,11 +43,11 @@ public class HKpiDaoImpl
   public void destroy() {}
   @Override
   public int count() {
-    return this.jdbcTemplate.queryForObject("select count(*) from " + hKpiTable, Integer.class);
+    return this.jdbcTemplate.queryForObject("select from " + hKpiTable, Integer.class);
   }
   @Override
   public List<HKpi> findAll() {
-    String sql = "SELECT * FROM "
+    String sql = "SELECT TOP(100) FROM "
                  + hKpiTable
     ;
     List<HKpi> alarms = this.jdbcTemplate.query(sql,

@@ -6,13 +6,15 @@
 package com.sirti.microservice.hbase.service;
 
 import com.sirti.microservice.hbase.model.HKpi;
+import com.sirti.microservice.hbase.model.SenecaMessageContentBase;
+
 import java.util.List;
 
 /**
  *
  * @author hadoop
  */
-public class HKpiResultSet {
+public class HKpiResultSet extends SenecaMessageContentBase {
   Boolean error;
   String errorMsg;
   long duration;
