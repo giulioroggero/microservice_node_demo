@@ -8,7 +8,7 @@ var express = require('express');
 var app = express();
 
 
-var seneca = require( 'seneca' )()
+var seneca = require( 'seneca' )({ timeout:99999 })
       .use( Router, {seneca: seneca} )
       .client( { type:'tcp', pin:'role:user' } )
       .client( { port:3001, pin:'role:user,cmd:hello' } ); // hardcoding hello

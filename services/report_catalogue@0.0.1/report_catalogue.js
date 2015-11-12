@@ -2,20 +2,35 @@
 
 // Report Catalogue- Microservice
 // 
+// 
 
 var debug = require('debug')('ReportCatalogueService');
+
+/*
+ - label = titolo dropdown
+ - column = nome colonna a cui verrà applicato il filtro
+
+ */
 
 /*jshint camelcase: false */
 var dummy = {
     dropdown_list: [{
-        name: 'Tipo Report',
+        label: 'Tipo Report',
+        column: 'tipo_report',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'produzione',
             value: 'Produzione'
         }]
     }, {
-        name: 'Silos',
+        label: 'Silos',
+        column: 'silos',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'ubb_access',
             value: 'UBB Access'
         }, {
@@ -26,8 +41,12 @@ var dummy = {
             value: 'Core, Platforms & Virtual'
         }]
     }, {
-        name: 'Polo',
+        label: 'Polo',
+        column: 'polo',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'roma',
             value: 'Roma'
         }, {
@@ -35,8 +54,12 @@ var dummy = {
             value: 'Milano'
         }]
     }, {
-        name: 'Isola',
+        label: 'Isola',
+        column: 'isola',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'access_network',
             value: 'Access Network (per UBB Access) '
         }, {
@@ -53,8 +76,12 @@ var dummy = {
             value: 'Fisso (per Core, Platforms & Virtual Functions) '
         }]
     },{
-        name: 'Famiglia',
+        label: 'Famiglia',
+        column: 'famiglia',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'adsl',
             value: 'ADSL'
         }, {
@@ -68,8 +95,12 @@ var dummy = {
             value: 'PTN'
         }]
     },{
-        name: 'Vendor',
+        label: 'Vendor',
+        column: 'vendor',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'alcatel',
             value: 'alcatel'
         }, {
@@ -98,8 +129,12 @@ var dummy = {
             value: 'Altro'
         }]
     },{
-        name: 'Piattaforma',
+        label: 'Piattaforma',
+        column: 'piattaforma',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'em',
             value: 'EM'
         }, {
