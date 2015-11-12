@@ -10,13 +10,15 @@ var hw = require('../');
 /*jshint camelcase: false */
 var dummy = {
     dropdown_list: [{
-        name: 'Tipo Report',
+        label: 'Tipo Report',
+        column: 'tipo_report',
         values: [{
             key: 'produzione',
             value: 'Produzione'
         }]
     }, {
-        name: 'Silos',
+        label: 'Silos',
+        column: 'silos',
         values: [{
             key: 'ubb_access',
             value: 'UBB Access'
@@ -28,7 +30,8 @@ var dummy = {
             value: 'Core, Platforms & Virtual'
         }]
     }, {
-        name: 'Polo',
+        label: 'Polo',
+        column: 'polo',
         values: [{
             key: 'roma',
             value: 'Roma'
@@ -37,7 +40,8 @@ var dummy = {
             value: 'Milano'
         }]
     }, {
-        name: 'Isola',
+        label: 'Isola',
+        column: 'isola',
         values: [{
             key: 'access_network',
             value: 'Access Network (per UBB Access) '
@@ -55,7 +59,8 @@ var dummy = {
             value: 'Fisso (per Core, Platforms & Virtual Functions) '
         }]
     },{
-        name: 'Famiglia',
+        label: 'Famiglia',
+        column: 'famiglia',
         values: [{
             key: 'adsl',
             value: 'ADSL'
@@ -70,7 +75,8 @@ var dummy = {
             value: 'PTN'
         }]
     },{
-        name: 'Vendor',
+        label: 'Vendor',
+        column: 'vendor',
         values: [{
             key: 'alcatel',
             value: 'alcatel'
@@ -100,7 +106,8 @@ var dummy = {
             value: 'Altro'
         }]
     },{
-        name: 'Piattaforma',
+        label: 'Piattaforma',
+        column: 'piattaforma',
         values: [{
             key: 'em',
             value: 'EM'

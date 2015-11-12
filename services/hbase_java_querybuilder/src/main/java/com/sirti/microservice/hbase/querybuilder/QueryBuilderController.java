@@ -26,6 +26,7 @@ public class QueryBuilderController {
     	return hKpiService.findAll();
   	}
     
+    
     @RequestMapping(value = "/act", method = RequestMethod.POST)
   	public SenecaMessage<HKpiResultSet> getAlarmsFromRouter(SenecaMessage<SenecaMessageQuery> message) {
     	logger.info("Router call. Cmd: {}, Role:{}",message.cmd, message.role);
