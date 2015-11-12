@@ -14,18 +14,30 @@ import com.sirti.microservice.hbase.service.HKpiResultSet;
 import com.sirti.microservice.hbase.service.HKpiService;
 import com.sirti.microservice.hbase.service.RouterRegister;
 
+import com.sirti.microservice.hbase.service.UnicoStoricoResultSet;
+import com.sirti.microservice.hbase.service.UnicoStoricoService;
+
 @RestController
 public class QueryBuilderController {
 
 	final static Logger logger = LoggerFactory.getLogger(RouterRegister.class);
 	
-	@Autowired
+	  @Autowired
     HKpiService hKpiService;
+
+    // FIXME: fare classi generiche------------------------------- (giulio)
+    @Autowired
+    UnicoStoricoService unicoStoricoService;
 
     @RequestMapping(value = "/kpilist", method = RequestMethod.GET)
   	public HKpiResultSet getAlarms() {
     	return hKpiService.findAll();
   	}
+
+    @RequestMapping(value = "/unicostorico", method = RequestMethod.GET)
+    public UnicoStoricoResultSet getAll() {
+      return unicoStoricoService.findAll();
+    }
     
     @RequestMapping(value = "/act", method = RequestMethod.POST)
   	public SenecaMessage<HKpiResultSet> getAlarmsFromRouter(@RequestBody SenecaMessagePath message) {
