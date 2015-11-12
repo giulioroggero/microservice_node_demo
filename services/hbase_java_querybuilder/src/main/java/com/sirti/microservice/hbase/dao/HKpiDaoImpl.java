@@ -47,7 +47,7 @@ public class HKpiDaoImpl
   }
   @Override
   public List<HKpi> findAll() {
-    String sql = "SELECT TOP(100) FROM "
+    String sql = "SELECT * FROM "
                  + hKpiTable
     ;
     List<HKpi> alarms = this.jdbcTemplate.query(sql,
