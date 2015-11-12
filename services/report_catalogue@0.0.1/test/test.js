@@ -14,9 +14,6 @@ var dummy = {
         values: [{
             key: 'produzione',
             value: 'Produzione'
-        }, {
-            key: 'chiave2',
-            value: 'valore3'
         }]
     }, {
         name: 'Silos',
