@@ -51,15 +51,19 @@ public class UnicoStoricoResultSet extends SenecaMessageContentBase {
 
   public List<HColumn> getColumns(){
     List<HColumn> cols = new ArrayList<HColumn>();
-    //|   SILOS    |   ISOLA    |    POLO    |  REGIONE   | ALLARMI_INSORTI | PRESENTATI | ALLARMI_GESTITI |
 
-    cols.add(new HColumn("Silos","silos"));
     cols.add(new HColumn("Isola","isola"));
     cols.add(new HColumn("Polo","polo"));
-    cols.add(new HColumn("Regione","regione"));
-    cols.add(new HColumn("Allarmi Insorti","allarmi_insorti"));
-    cols.add(new HColumn("Presentati","presentati"));
-    cols.add(new HColumn("Allarmi Gestiti","allarmi_gestiti"));
+    cols.add(new HColumn("Famiglia","famiglia"));
+    cols.add(new HColumn("Piattaforma","piattaforma"));
+    cols.add(new HColumn("Vendor","vendor"));
+    cols.add(new HColumn("PC","pc"));
+    cols.add(new HColumn("VAI","vai"));
+    cols.add(new HColumn("VAP","vap"));
+    cols.add(new HColumn("VAG","vag"));
+    cols.add(new HColumn("VNTT","vntt"));
+    cols.add(new HColumn("VCTT","vctt"));
+
     return cols;
   }
 
