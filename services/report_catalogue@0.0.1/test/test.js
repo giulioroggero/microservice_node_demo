@@ -55,19 +55,19 @@ var dummy = {
             key: 'all',
             value: 'All'
         },{
-            key: 'access_network',
+            key: 'Access Network',
             value: 'Access Network (per UBB Access) '
         }, {
-            key: 'backbone_ip',
+            key: 'Backbone IP',
             value: 'Backbone IP (per All Ip & Backbone)'
         }, {
-            key: 'backbone_tx',
+            key: 'Backbone TX',
             value: 'Backbone TX (per All Ip & Backbone)'
         }, {
-            key: 'mobile',
+            key: 'Mobile',
             value: 'Mobile (per Core, Platforms & Virtual Functions)'
         }, {
-            key: 'fisso',
+            key: 'Fisso',
             value: 'Fisso (per Core, Platforms & Virtual Functions) '
         }]
     },{
@@ -93,34 +93,34 @@ var dummy = {
         label: 'Vendor',
         column: 'vendor',
         values: [{
-            key: 'all',
+            key: 'All',
             value: 'All'
         },{
-            key: 'alcatel',
-            value: 'alcatel'
+            key: 'Alcatel',
+            value: 'Alcatel'
         }, {
-            key: 'ericsson',
+            key: 'Ericsson',
             value: 'Ericsson'
         }, {
-            key: 'esm',
+            key: 'Esm',
             value: 'ESM'
         }, {
-            key: 'huawei',
+            key: 'Huawei',
             value: 'Huawei'
         }, {
-            key: 'italtel',
+            key: 'Italtel',
             value: 'Italtel'
         }, {
-            key: 'nokia',
+            key: 'Nokia',
             value: 'Nokia'
         }, {
-            key: 'siemens',
+            key: 'Siemens',
             value: 'Siemens'
         }, {
-            key: 'teko',
+            key: 'Teko',
             value: 'TEKO'
         }, {
-            key: 'altro',
+            key: 'Altri VENDOR',
             value: 'Altro'
         }]
     },{
