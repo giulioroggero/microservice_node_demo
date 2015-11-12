@@ -40,15 +40,29 @@ public class QueryBuilderController {
     }
     
     @RequestMapping(value = "/act", method = RequestMethod.POST)
-  	public SenecaMessage<HKpiResultSet> getAlarmsFromRouter(@RequestBody SenecaMessagePath message) {
+  	public SenecaMessage<UnicoStoricoResultSet> getAlarmsFromRouter(@RequestBody SenecaMessagePath message) {
     	
-    	logger.info("Router call. role: {}, cmd: {}, message: {}",message.role, message.cmd, message.path);
-    	SenecaMessage<HKpiResultSet> ret = new SenecaMessage<HKpiResultSet>();
-    	ret.message = hKpiService.findAll();
-    	ret.cmd = message.cmd;
-    	ret.role = message.role;
-    	logger.info("Number of record {}", ret.message.getHKpiList().size());
-    	return ret;
+    	logger.info("Router call. role: {}, cmd: {}, message: {}",message.role, message.cmd, message.message);
+    	
+    	
+    	if (message.message.equals("kpilist"))
+    	{
+    		SenecaMessage<HKpiResultSet> ret = new SenecaMessage<HKpiResultSet>();
+        	ret.cmd = message.cmd;
+        	ret.role = message.role;
+        	ret.message = hKpiService.findAll();
+    	}else if(message.message.equals("unicostorico"))
+    	{
+    		SenecaMessage<UnicoStoricoResultSet> ret = new SenecaMessage<UnicoStoricoResultSet>();
+        	ret.cmd = message.cmd;
+        	ret.role = message.role;
+        	ret.message = unicoStoricoService.findAll();
+
+        	return ret;
+    	}
+    	
+    	return new SenecaMessage<UnicoStoricoResultSet>();
+    	
   	}
 }
 

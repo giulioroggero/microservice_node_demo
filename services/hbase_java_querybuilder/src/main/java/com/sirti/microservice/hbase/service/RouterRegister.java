@@ -26,7 +26,7 @@ public class RouterRegister implements ApplicationListener<ContextRefreshedEvent
 		request.role = "microservice";
 		request.message = new SenecaMessageRegister();
 		request.message.clientPort = "9999";
-		request.message.cmd = "kpilist";
+		request.message.cmd = "report";
 		request.message.role = "user";
 		
 		
