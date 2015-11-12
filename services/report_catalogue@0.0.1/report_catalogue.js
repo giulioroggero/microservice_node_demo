@@ -18,6 +18,9 @@ var dummy = {
         label: 'Tipo Report',
         column: 'tipo_report',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'produzione',
             value: 'Produzione'
         }]
@@ -25,6 +28,9 @@ var dummy = {
         label: 'Silos',
         column: 'silos',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'ubb_access',
             value: 'UBB Access'
         }, {
@@ -38,6 +44,9 @@ var dummy = {
         label: 'Polo',
         column: 'polo',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'roma',
             value: 'Roma'
         }, {
@@ -48,6 +57,9 @@ var dummy = {
         label: 'Isola',
         column: 'isola',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'access_network',
             value: 'Access Network (per UBB Access) '
         }, {
@@ -67,6 +79,9 @@ var dummy = {
         label: 'Famiglia',
         column: 'famiglia',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'adsl',
             value: 'ADSL'
         }, {
@@ -83,6 +98,9 @@ var dummy = {
         label: 'Vendor',
         column: 'vendor',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'alcatel',
             value: 'alcatel'
         }, {
@@ -114,6 +132,9 @@ var dummy = {
         label: 'Piattaforma',
         column: 'piattaforma',
         values: [{
+            key: 'all',
+            value: 'All'
+        },{
             key: 'em',
             value: 'EM'
         }, {
