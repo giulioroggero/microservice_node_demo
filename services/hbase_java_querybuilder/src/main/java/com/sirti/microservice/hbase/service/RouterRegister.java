@@ -22,6 +22,8 @@ public class RouterRegister implements ApplicationListener<ContextRefreshedEvent
 		RestTemplate restTemplate = new RestTemplate();
 		
 		SenecaMessage<SenecaMessageRegister> request = new SenecaMessage<SenecaMessageRegister>();
+		request.cmd ="register";
+		request.role = "microservice";
 		request.message = new SenecaMessageRegister();
 		request.message.clientPort = "9999";
 		request.message.cmd = "kpilist";

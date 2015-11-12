@@ -1,12 +1,15 @@
 package com.sirti.microservice.hbase.filter;
 
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +22,20 @@ public class CORSFilter implements Filter {
 		response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
 		response.setHeader("Access-Control-Max-Age", "3600");
 		response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+		HttpServletRequest request = (HttpServletRequest) req;
+		
+		Enumeration<String> headerNames = request.getHeaderNames();
+		while (headerNames.hasMoreElements()) {
+			String h = (String) headerNames.nextElement();
+			if (h.startsWith("seneca-"))
+			{
+				response.setHeader(h, request.getHeader(h));
+			}
+				
+
+		}
+		
+		
 		chain.doFilter(req, res);
 	}
 
