@@ -21,50 +21,54 @@ import org.slf4j.LoggerFactory;
 
 /*Estrazione dati dallo storico allarmi con calcolo aggregazioni e kpi per la rappresentazione dei report.
 I dati verranno inseriti in HBase nella tabella KPI_FE_UNICO_STORICO' (con column family 'KPI') che ha la seguente struttura:
-PROG                 VARCHAR NOT NULL, // Chiave
-    kpi.DATA            VARCHAR,  1
-    kpi.SILOS           VARCHAR,  2
-    kpi.ISOLA           VARCHAR,  3
-    kpi.POLO            VARCHAR,  4
-    kpi.REGIONE     VARCHAR,    5
-    kpi.SEVERITY        VARCHAR,  6
-    kpi.DOMINIO     VARCHAR,    7
-    kpi.NETWORK     VARCHAR,    8
-    kpi.FAMIGLIA        VARCHAR,  9
-  kpi.SLOGAN      VARCHAR,    10
-    
-    kpi.PIATTAFORMA VARCHAR,        11
-    kpi.VENDOR      VARCHAR,        12
-    kpi.ACK         VARCHAR,        13
-    kpi.ACKTT           VARCHAR,    14
-    kpi.ACKTTP      VARCHAR,        15
-    kpi.CORR            VARCHAR,    16
-    kpi.PSISTEMA        VARCHAR,    17
-    kpi.OUT         VARCHAR,        18
-    kpi.NGN         VARCHAR,        19
-    kpi.NGNMIN60        VARCHAR,    20
-    kpi.NGMMAG60    VARCHAR,
-    kpi.PC              VARCHAR,            // Competenza: giornalieri, settimanali, mensili
-    kpi.VAI         VARCHAR,                // Volume allarmi insorti
-    kpi.VAP         VARCHAR,                // Volume allarmi presentati
-    kpi.VAG         VARCHAR,                // Volume allarmi gestiti
-    kpi.VNTT            VARCHAR,            // Volume severity trouble ticket
-    kpi.VCTT            VARCHAR,            // Volume customer trouble ticket
-    kpi.DA              VARCHAR,            // Densità allarmi
-    kpi.IGA         VARCHAR,                // Indice gestione allarmi
-    kpi.ICRNTT          VARCHAR,            // Indice di creazione NTT
-    kpi.IRRNTT          VARCHAR,            // Indice risoluzione da Remoto NTT
-    kpi.IDNTT           VARCHAR,            // Indice dispacciamento NTT
-    kpi.IDNTTWR     VARCHAR,                // Indice dispacciamento NTT con Revoca WR
-    kpi.ICONTT      VARCHAR,                // Indice correlazione NTT
-    kpi.ITNTT           VARCHAR,            // Indice trasferimento NTT
-    kpi.NTTRSLA     VARCHAR,                // Num NTT con tempo reazione allarme entro SLA
-    kpi.NTTDSLA     VARCHAR,                // Nugetsilosmero NTT con tempo di diagnosi entro SLA
-    kpi.TTRR            VARCHAR,            // Ripetitività a 7 giorni su TT RR
-    kpi.IRNTTD          VARCHAR,            // Indice di risoluzione di NTT Dispacciati
-    kpi.DTI         VARCHAR                 // DTI
-CONSTRAINT PK PRIMARY KEY (PROG)
+
+CREATE TABLE IF NOT EXISTS kpi_fe_unico_storico (
+        DATA                DATE not null,
+        SILOS               VARCHAR not null,
+        POLO                VARCHAR not null,
+        ISOLA               VARCHAR not null,
+        DOMINIO             VARCHAR not null,
+        REGIONE             VARCHAR not null,
+        SEVERITY            VARCHAR not null,
+        NETWORK             VARCHAR not null,
+        FAMIGLIA            VARCHAR not null,
+        SLOGAN              VARCHAR not null,
+        PIATTAFORMA         VARCHAR not null,
+        VENDOR              VARCHAR not null,
+        ACK                 INTEGER,
+        ACKTT               INTEGER,
+        ACKTTP              INTEGER,
+        CORR                INTEGER,
+        PSISTEMA            INTEGER,
+        OUT                 INTEGER,
+        NGN                 INTEGER,
+        NGNMIN60            INTEGER,
+        NGNMAG60            INTEGER,
+        PC                  VARCHAR,
+        VAI                 INTEGER,
+        VAP                 INTEGER,
+        VAG                 INTEGER,
+        VNTT                INTEGER,
+        VCTT                INTEGER,
+        DA                  INTEGER,
+        IGA                 INTEGER,
+        ICRNTT              INTEGER,
+        IRRNTT              INTEGER,
+        IDNTT               INTEGER,
+        IDNTTWR             INTEGER,
+        ICONTT              INTEGER,
+        ITNTT               INTEGER,
+        NTTRSLA             INTEGER,
+        NTTDSLA             INTEGER,
+        TTRR                INTEGER,
+        IRNTTD              INTEGER,
+        DTI                 INTEGER
+
+CONSTRAINT PK PRIMARY KEY (DATA,SILOS,POLO,ISOLA,DOMINIO,REGIONE,SEVERITY,
+                           NETWORK,FAMIGLIA,SLOGAN,PIATTAFORMA,VENDOR)
 );
+
+
 */
 
 public class UnicoStorico {
@@ -77,8 +81,8 @@ public class UnicoStorico {
   String famiglia;
   String piattaforma;
   String vendor;
-
-  Integer pc;
+  String pc;
+  
   Integer vai;
   Integer vap;
   Integer vag;
@@ -122,10 +126,10 @@ public class UnicoStorico {
   public void setVendor(String vendor) {
         this.vendor = vendor;
   }
-  public Integer getPc() {
+  public String getPc() {
     return pc;
   }
-  public void setPc(Integer pc) {
+  public void setPc(String pc) {
     this.pc = pc;
   }
   public Integer getVai() {
