@@ -63,6 +63,7 @@ public class HKpi {
   Integer totale_contatori;
 
   public HKpi() {}
+
   public Date getData() {
     return data;
   }
